@@ -1,0 +1,32 @@
+<template lang="pug">
+  .skill.pb-12
+    v-row(justify="center")
+      v-col(cols=12 md=10 lg=8)
+        .skill-set.display-2.font-weight-bold.my-12 SkillSet
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 AWS
+        .skill-set-article.title 使い始めて4年程度。好きなサービスは Lambda / DynamoDB / AppSync あたり。
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 HTML / CSS / JavaScript
+        .skill-set-article.title 使い始めて5年程度。CSSアニメーションとかが好き。
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 Pug / Sass(Scss) / TypeScript
+        .skill-set-article.title 使い始めて3年程度。もう型のない世界には戻れない。
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 Node.js
+        .skill-set-article.title 使い始めて3年程度。サーバサイドの言語として使っています。<br>また Lambda のランタイム言語としてもよく使っています。JS のまま書いていたり TS で書いたりしています。
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 Vue.js / Nuxt.js
+        .skill-set-article.title 使い始めて2年程度。Webアプリケーションのフレームワークとして採用しています。<br>Vue を書くときは Pug / Scss / TypeScript で書いています。業務でも趣味でも使っています。
+        .skill-set-title.display-1.font-weight-bold.mt-6.mb-4 Python
+        .skill-set-article.title Lambdaで使ったり、IoTシステムで使うGWの中で使ったりしています。ただほんとにチョットカケルってレベル。
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({})
+</script>
+
+<style lang="scss" scoped>
+.skill {
+  .title-text {
+    font-size: 2.5rem;
+  }
+}
+</style>
