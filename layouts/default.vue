@@ -18,8 +18,10 @@
         v-toolbar-items.hidden-sm-and-down
           a.header-icon.mr-5(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
             v-icon mdi-twitter
-          a.header-icon(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
+          a.header-icon.mr-5(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
             v-icon mdi-github
+          a.header-icon(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
+            v-icon mdi-email
     v-content.main-content.overflow-y-auto
       .content-wrapper(@click="onClick")
         transition(appear name="page-transition")

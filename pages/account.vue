@@ -1,12 +1,17 @@
 <template lang="pug">
-  .account
-    .d-flex.justify-center.align-center.flex-column(style="height: calc(100vh - 54px);")
-      a.d-flex.title-text(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
-        v-icon mdi-twitter
-        .text.ml-4 @is_ryo
-      a.d-flex.title-text(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
-        v-icon mdi-github
-        .text.ml-4 @ryo-is
+  .account.d-flex.justify-center.align-center(style="height: calc(100vh - 54px);")
+    v-col(cols=12)
+      .display-2.font-weight-bold.mb-12 Accounts
+      v-row.justify-center.align-center
+        v-col.mx-6(cols=1)
+          a(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
+            img.icon(src="../assets/twitter-original.svg", alt="twitter")
+        v-col.mx-6(cols=1)
+          a(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
+            img.icon(src="../assets/github-original.svg", alt="github")
+        v-col.mx-6(cols=1)
+          a(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
+            img.icon(src="../assets/gmail-icon-2.svg", alt="github")
 </template>
 
 <script lang="ts">
@@ -17,17 +22,8 @@ export default Vue.extend({})
 
 <style lang="scss" scoped>
 .account {
-  .page-title {
-    font-size: 4rem;
-  }
-
-  .title-text {
-    font-size: 2.5rem;
-    text-decoration: none;
-
-    i {
-      font-size: 2.5rem;
-    }
+  .icon {
+    width: 100%;
   }
 }
 </style>
