@@ -11,7 +11,9 @@
             :color="changeLinkButtonProps(item.link, 'color')"
             :text="changeLinkButtonProps(item.link, 'text')"
             @click="linkPage(item.link)"
-            dark depressed width=160) {{ item.text }}
+            dark depressed width=160)
+            v-icon(left size=20) {{ 'mdi-' + item.icon }}
+            span.btn-text {{ item.text }}
         v-spacer
         v-toolbar-items.hidden-sm-and-down
           a.header-icon.mr-5(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
@@ -27,20 +29,20 @@
           .curtain-bar(v-for="n of 10" :key="n" :data-index="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + '%'}")
         transition-group(appear name="blackout-curtain-after" @after-enter="blackoutCurtainAfterEnter")
           .curtain-bar(v-for="n of 10" :key="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + 5 + '%'}")
-      .ripple-wrapper.wrapper.overflow-y-hidden
-        transition(appear name="ripple" @after-enter="rippleAfterEnter")
-          span.ripple(v-if="ripple", :style="{top: y + 'px', left: x + 'px'}")
+      //- .ripple-wrapper.wrapper.overflow-y-hidden
+      //-   transition(appear name="ripple" @after-enter="rippleAfterEnter")
+      //-     span.ripple(v-if="ripple", :style="{top: y + 'px', left: x + 'px'}")
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 const toolbarItems = [
-  { text: 'home', link: '/' },
-  { text: 'info', link: '/info' },
-  { text: 'skill', link: '/skill' },
-  { text: 'blog', link: '/blog' },
-  { text: 'acounts', link: '/account' }
+  { text: 'home', link: '/', icon: 'home-variant' },
+  { text: 'info', link: '/info', icon: 'information' },
+  { text: 'skill', link: '/skill', icon: 'xml' },
+  // { text: 'blog', link: '/blog' },
+  { text: 'acounts', link: '/account', icon: 'account-circle' }
 ]
 
 const states = {
