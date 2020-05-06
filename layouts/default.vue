@@ -109,8 +109,9 @@ body {
 }
 
 #app {
-  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
+  font-family: 'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
     Meiryo, 'MS Pゴシック', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

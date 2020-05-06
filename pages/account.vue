@@ -5,13 +5,13 @@
       v-row.justify-center.align-center
         v-col.mx-6(cols=1)
           a(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/twitter-original.svg", alt="twitter")
+            img.icon(src="../assets/svg/twitter-original.svg", alt="twitter")
         v-col.mx-6(cols=1)
           a(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/github-original.svg", alt="github")
+            img.icon(src="../assets/svg/github-original.svg", alt="github")
         v-col.mx-6(cols=1)
           a(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/gmail-icon-2.svg", alt="github")
+            img.icon(src="../assets/svg/gmail-icon-2.svg", alt="github")
 </template>
 
 <script lang="ts">

@@ -1,7 +1,7 @@
 <template lang="pug">
   .home
     .d-flex.justify-center.align-center(style="height: calc(100vh - 54px);")
-      .title-text.display-2 Wellcome to is_ryo's Portfolio!!!
+      vue-typer.title-text.display-2(text="Wellcome to is_ryo's Portfolio!!!", :repeat='0')
 </template>
 
 <script lang="ts">
@@ -14,6 +14,10 @@ export default Vue.extend({})
 .home {
   .title-text {
     font-size: 2.5rem;
+
+    .custom.char {
+      color: #ffffff;
+    }
   }
 }
 </style>
