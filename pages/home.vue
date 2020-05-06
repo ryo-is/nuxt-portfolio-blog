@@ -4,7 +4,7 @@
     transition(name="upper-content")
       .menu.mt-12(v-if='menu')
         .display-1 menu
-        nuxt-link.d-flex.menu-content.ma-6(to='about')
+        nuxt-link.d-flex.menu-content.ma-6(to='about' @click='linkPage')
           v-icon.display-1.pr-3 mdi-information
           .display-1 About is_ryo
         nuxt-link.d-flex.menu-content.ma-6(to='skill')
@@ -28,6 +28,11 @@ export default Vue.extend({
     setTimeout(() => {
       this.menu = true
     }, 2600)
+  },
+  methods: {
+    linkPage() {
+      console.log('link')
+    }
   }
 })
 </script>

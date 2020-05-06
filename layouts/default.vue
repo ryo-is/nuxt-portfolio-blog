@@ -38,6 +38,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 
 const toolbarItems = [
   { text: 'home', link: '/home', icon: 'home-variant' },
@@ -49,7 +50,7 @@ const toolbarItems = [
 
 const states = {
   toolbarItems,
-  blackoutCurtain: false,
+  // blackoutCurtain: false,
   ripple: false,
   x: 0,
   y: 0
@@ -60,6 +61,7 @@ export default Vue.extend({
     return states
   },
   computed: {
+    ...mapState(['blackoutCurtain']),
     changeLinkButtonProps(): Function {
       const currentRoute: string = this.$route.path
       return (routeString: string, propText: string): string | boolean => {
@@ -73,6 +75,7 @@ export default Vue.extend({
     }
   },
   methods: {
+    ...mapActions(['setBlackoutCurtain']),
     onClick(e: MouseEvent) {
       this.ripple = true
       this.x = e.pageX
@@ -80,7 +83,7 @@ export default Vue.extend({
     },
     linkPage(linkPath: string) {
       if (linkPath !== this.$route.path) {
-        this.blackoutCurtain = true
+        // this.setBlackoutCurtain(true)
         this.$router.push(linkPath)
       }
     },
@@ -88,7 +91,10 @@ export default Vue.extend({
       this.ripple = false
     },
     blackoutCurtainAfterEnter() {
-      this.blackoutCurtain = false
+      this.setBlackoutCurtain(false)
+    },
+    inputAction() {
+      console.log('inputAction')
     }
   }
 })
