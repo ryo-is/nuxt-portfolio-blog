@@ -28,6 +28,8 @@
         v-col(cols=1)
           img.skill-icon(src="../assets/svg/vuejs-original.svg", alt="vuejs")
         v-col(cols=1)
+          img.skill-icon(src="../assets/svg/nuxt-white.svg", alt="nuxt")
+        v-col(cols=1)
           img.skill-icon(src="../assets/svg/nodejs-original-wordmark.svg", alt="nodejs")
         v-col(cols=1)
           img.skill-icon(src="../assets/svg/python-original.svg", alt="python")
