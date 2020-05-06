@@ -41,7 +41,7 @@ import Vue from 'vue'
 
 const toolbarItems = [
   { text: 'home', link: '/', icon: 'home-variant' },
-  { text: 'info', link: '/info', icon: 'information' },
+  { text: 'about', link: '/about', icon: 'information' },
   { text: 'skill', link: '/skill', icon: 'xml' },
   // { text: 'blog', link: '/blog' },
   { text: 'acounts', link: '/account', icon: 'account-circle' }

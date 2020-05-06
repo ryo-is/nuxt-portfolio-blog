@@ -2,8 +2,11 @@
   .home.d-flex.justify-center.align-center.flex-column(style="height: calc(100vh - 54px);")
     vue-typer.title-text.display-2(text="Wellcome to is_ryo's Portfolio!!!", :repeat='0')
     transition(name="upper-content")
-      .links.mt-12(v-if='links')
-        .display-1 Links
+      .menu.mt-12(v-if='menu')
+        .display-1 menu
+        .d-flex.justify-center.align-center
+          .menu-content
+            .title About
 </template>
 
 <script lang="ts">
@@ -12,12 +15,12 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      links: false
+      menu: false
     }
   },
   mounted() {
     setTimeout(() => {
-      this.links = true
+      this.menu = true
     }, 2600)
   }
 })
