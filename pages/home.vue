@@ -4,24 +4,20 @@
     transition(name="upper-content")
       .menu.mt-12(v-if='menu')
         .display-1 menu
-        nuxt-link.d-flex.menu-content.ma-6(to='about' @click='linkPage')
-          v-icon.display-1.pr-3 mdi-information
-          .display-1 About is_ryo
-        nuxt-link.d-flex.menu-content.ma-6(to='skill')
-          v-icon.display-1.pr-3 mdi-xml
-          .display-1 is_ryo's SkillSets
-        nuxt-link.d-flex.menu-content.ma-6(to='account')
-          v-icon.display-1.pr-3 mdi-account-circle
-          .display-1 is_ryo's Accounts
+        home-menu-link(to-link="about", icon="mdi-information", text="About is_ryo")
+        home-menu-link(to-link="skill", icon="mdi-xml", text="is_ryo's SkillSets")
+        home-menu-link(to-link="account", icon="mdi-account-circle", text="is_ryo's Accounts")
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import HomeMenuLink from '@/components/HomeMenuLink.vue'
 
 export default Vue.extend({
+  components: { HomeMenuLink },
   data() {
     return {
-      menu: false
+      menu: true
     }
   },
   mounted() {
@@ -62,6 +58,16 @@ export default Vue.extend({
   .menu-content {
     color: #ffffff;
     text-decoration: none;
+  }
+
+  .cursor {
+    animation: Flash 1s infinite;
+  }
+
+  @keyframes Flash {
+    50% {
+      opacity: 0;
+    }
   }
 }
 </style>
