@@ -31,25 +31,22 @@
           .curtain-bar(v-for="n of 10" :key="n" :data-index="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + '%'}")
         transition-group(appear name="blackout-curtain-after" @after-enter="blackoutCurtainAfterEnter")
           .curtain-bar(v-for="n of 10" :key="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + 5 + '%'}")
-      //- .ripple-wrapper.wrapper.overflow-y-hidden
-      //-   transition(appear name="ripple" @after-enter="rippleAfterEnter")
-      //-     span.ripple(v-if="ripple", :style="{top: y + 'px', left: x + 'px'}")
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 
 const toolbarItems = [
   { text: 'home', link: '/home', icon: 'home-variant' },
   { text: 'about', link: '/about', icon: 'information' },
   { text: 'skill', link: '/skill', icon: 'xml' },
-  // { text: 'blog', link: '/blog' },
   { text: 'acounts', link: '/account', icon: 'account-circle' }
 ]
 
 const states = {
   toolbarItems,
-  blackoutCurtain: false,
+  // blackoutCurtain: false,
   ripple: false,
   x: 0,
   y: 0
@@ -60,6 +57,7 @@ export default Vue.extend({
     return states
   },
   computed: {
+    ...mapState(['blackoutCurtain']),
     changeLinkButtonProps(): Function {
       const currentRoute: string = this.$route.path
       return (routeString: string, propText: string): string | boolean => {
@@ -73,6 +71,7 @@ export default Vue.extend({
     }
   },
   methods: {
+    ...mapActions(['setBlackoutCurtain']),
     onClick(e: MouseEvent) {
       this.ripple = true
       this.x = e.pageX
@@ -80,7 +79,6 @@ export default Vue.extend({
     },
     linkPage(linkPath: string) {
       if (linkPath !== this.$route.path) {
-        this.blackoutCurtain = true
         this.$router.push(linkPath)
       }
     },
@@ -88,7 +86,10 @@ export default Vue.extend({
       this.ripple = false
     },
     blackoutCurtainAfterEnter() {
-      this.blackoutCurtain = false
+      this.setBlackoutCurtain(false)
+    },
+    inputAction() {
+      console.log('inputAction')
     }
   }
 })
@@ -187,30 +188,6 @@ body {
         height: 5%;
         position: absolute;
         width: 100%;
-      }
-    }
-
-    .ripple-wrapper {
-      position: fixed;
-
-      .ripple {
-        display: block;
-        width: 180px;
-        height: 180px;
-        border-radius: 120px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        background-color: rgba(#9e9e9e, 0.4);
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(10);
-        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-
-        &-enter {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(0);
-        }
       }
     }
   }
