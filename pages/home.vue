@@ -54,20 +54,5 @@ export default Vue.extend({
       transform: translateY(10vh) translateX(0);
     }
   }
-
-  .menu-content {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  .cursor {
-    animation: Flash 1s infinite;
-  }
-
-  @keyframes Flash {
-    50% {
-      opacity: 0;
-    }
-  }
 }
 </style>
