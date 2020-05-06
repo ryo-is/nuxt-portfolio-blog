@@ -17,7 +17,7 @@ export default Vue.extend({
   components: { HomeMenuLink },
   data() {
     return {
-      menu: true
+      menu: false
     }
   },
   mounted() {
