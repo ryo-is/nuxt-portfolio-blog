@@ -39,7 +39,7 @@ export default Vue.extend({
 }
 
 .cursor {
-  animation: Flash 1s infinite;
+  animation: Flash 0.6s infinite;
 
   &.hidden {
     visibility: hidden;
