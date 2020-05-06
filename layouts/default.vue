@@ -2,18 +2,14 @@
   v-app
     v-card(height="54px" flat tile)
       v-app-bar.px-6(
-        color="blue-grey darken-4" height="54px"
+        color="#121212" height="54px"
         prominent dense absolute elevate-on-scroll scroll-target=".main-content"
       )
         v-toolbar-items.hidden-sm-and-down
-          v-btn.font-weight-bold(
-            v-for="item in toolbarItems", :key="item.text"
-            :color="changeLinkButtonProps(item.link, 'color')"
-            :text="changeLinkButtonProps(item.link, 'text')"
-            @click="linkPage(item.link)"
-            dark depressed width=160)
-            v-icon(left size=20) {{ 'mdi-' + item.icon }}
-            span.btn-text {{ item.text }}
+          nuxt-link.headder-link.mx-2(v-for="item in toolbarItems", :key="item.text", :to="item.link")
+            .d-flex.align-center.link-content.headline.px-3(:class="{'underline': $route.path === item.link}")
+              v-icon(left) {{ 'mdi-' + item.icon }}
+              .text {{ item.text }}
         v-spacer
         v-toolbar-items.hidden-sm-and-down
           a.header-icon.mr-5(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
@@ -23,7 +19,7 @@
           a.header-icon(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
             v-icon mdi-email
     v-content.main-content.overflow-y-auto
-      .content-wrapper(@click="onClick")
+      .content-wrapper
         transition(appear name="page-transition")
           nuxt
       .blackout-curtain.wrapper
@@ -57,39 +53,12 @@ export default Vue.extend({
     return states
   },
   computed: {
-    ...mapState(['blackoutCurtain']),
-    changeLinkButtonProps(): Function {
-      const currentRoute: string = this.$route.path
-      return (routeString: string, propText: string): string | boolean => {
-        switch (propText) {
-          case 'text':
-            return routeString !== currentRoute
-          default:
-            return routeString === currentRoute ? 'blue-grey darken-3' : ''
-        }
-      }
-    }
+    ...mapState(['blackoutCurtain'])
   },
   methods: {
     ...mapActions(['setBlackoutCurtain']),
-    onClick(e: MouseEvent) {
-      this.ripple = true
-      this.x = e.pageX
-      this.y = e.pageY
-    },
-    linkPage(linkPath: string) {
-      if (linkPath !== this.$route.path) {
-        this.$router.push(linkPath)
-      }
-    },
-    rippleAfterEnter() {
-      this.ripple = false
-    },
     blackoutCurtainAfterEnter() {
       this.setBlackoutCurtain(false)
-    },
-    inputAction() {
-      console.log('inputAction')
     }
   }
 })
@@ -120,6 +89,19 @@ body {
   .header-icon {
     padding-top: 9px;
     text-decoration: none;
+  }
+
+  .headder-link {
+    color: #ffffff;
+    text-decoration: none;
+
+    .link-content {
+      height: 100%;
+
+      &.underline {
+        border-bottom: 2px solid;
+      }
+    }
   }
 
   .main-content {
