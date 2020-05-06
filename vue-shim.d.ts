@@ -4,3 +4,4 @@ declare module '*.vue' {
 }
 
 declare module 'vue-typer'
+declare module '*.svg'
