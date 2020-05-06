@@ -40,8 +40,8 @@
 import Vue from 'vue'
 
 const toolbarItems = [
-  { text: 'home', link: '/', icon: 'home-variant' },
-  { text: 'info', link: '/info', icon: 'information' },
+  { text: 'home', link: '/home', icon: 'home-variant' },
+  { text: 'about', link: '/about', icon: 'information' },
   { text: 'skill', link: '/skill', icon: 'xml' },
   // { text: 'blog', link: '/blog' },
   { text: 'acounts', link: '/account', icon: 'account-circle' }
@@ -109,8 +109,9 @@ body {
 }
 
 #app {
-  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
+  font-family: 'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
     Meiryo, 'MS Pゴシック', sans-serif;
+  font-family: 'Kosugi Maru', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

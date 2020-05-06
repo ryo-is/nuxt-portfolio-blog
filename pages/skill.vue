@@ -16,26 +16,26 @@
       //- .skill-set-article.title Lambdaで使ったり、IoTシステムで使うGWの中で使ったりしています。ただほんとにチョットカケルってレベル。
       v-row.justify-center.align-center
         v-col(cols=1)
-          img.skill-icon(src="../assets/html5-original.svg", alt="html5")
+          img.skill-icon(src="../assets/svg/html5-original.svg", alt="html5")
         v-col(cols=1)
-          img.skill-icon(src="../assets/css3-original.svg", alt="css3")
+          img.skill-icon(src="../assets/svg/css3-original.svg", alt="css3")
         v-col(cols=1)
-          img.skill-icon(src="../assets/sass-original.svg", alt="sass")
+          img.skill-icon(src="../assets/svg/sass-original.svg", alt="sass")
         v-col(cols=1)
-          img.skill-icon(src="../assets/javascript-original.svg", alt="javascript")
+          img.skill-icon(src="../assets/svg/javascript-original.svg", alt="javascript")
         v-col(cols=1)
-          img.skill-icon(src="../assets/typescript-original.svg", alt="typescript")
+          img.skill-icon(src="../assets/svg/typescript-original.svg", alt="typescript")
         v-col(cols=1)
-          img.skill-icon(src="../assets/vuejs-original.svg", alt="vuejs")
+          img.skill-icon(src="../assets/svg/vuejs-original.svg", alt="vuejs")
         v-col(cols=1)
-          img.skill-icon(src="../assets/nodejs-original-wordmark.svg", alt="nodejs")
+          img.skill-icon(src="../assets/svg/nodejs-original-wordmark.svg", alt="nodejs")
         v-col(cols=1)
-          img.skill-icon(src="../assets/python-original.svg", alt="python")
+          img.skill-icon(src="../assets/svg/python-original.svg", alt="python")
       v-row.justify-center.align-center
         v-col(cols=1)
-          img.skill-icon(src="../assets/aws-2.svg", alt="aws")
+          img.skill-icon(src="../assets/svg/aws-2.svg", alt="aws")
         v-col(cols=1)
-          img.skill-icon(src="../assets/firebase-1.svg", alt="firebase")
+          img.skill-icon(src="../assets/svg/firebase-1.svg", alt="firebase")
 </template>
 
 <script lang="ts">
