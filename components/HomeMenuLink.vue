@@ -1,9 +1,17 @@
-<template lang="pug">
-  nuxt-link.menu-content.ma-6(:to='toLink')
-    .link-wrapper.d-flex.align-center(@mouseover="hiddenArrow=false", @mouseleave="hiddenArrow=true")
-      v-icon.cursor.display-1(:class="{'hidden': hiddenArrow}") mdi-chevron-right
-      v-icon.display-1.pr-3 {{ icon }}
-      .display-1 {{ text }}
+<template>
+  <nuxt-link class="menu-content ma-6" :to="toLink">
+    <div
+      class="link-wrapper d-flex align-center"
+      @mouseover="hiddenArrow = false"
+      @mouseleave="hiddenArrow = true"
+    >
+      <v-icon class="cursor display-1" :class="{ hidden: hiddenArrow }"
+        >mdi-chevron-right</v-icon
+      >
+      <v-icon class="display-1 pr-3">{{ icon }}</v-icon>
+      <div class="display-1">{{ text }}</div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
