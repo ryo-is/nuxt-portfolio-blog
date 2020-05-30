@@ -1,17 +1,51 @@
-<template lang="pug">
-  .account.d-flex.justify-center.align-center(style="height: calc(100vh - 54px);")
-    v-col(cols=12)
-      .display-2.font-weight-bold.mb-12 Accounts
-      v-row.justify-center.align-center
-        v-col.mx-6(cols=1)
-          a(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/svg/twitter-original.svg", alt="twitter")
-        v-col.mx-6(cols=1)
-          a(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/svg/github-original.svg", alt="github")
-        v-col.mx-6(cols=1)
-          a(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
-            img.icon(src="../assets/svg/gmail-icon-2.svg", alt="github")
+<template>
+  <div
+    class="account d-flex justify-center align-center"
+    style="height: calc(100vh - 54px);"
+  >
+    <v-col :cols="12">
+      <div class="display-2 font-weight-bold mb-12">Accounts</div>
+      <v-row class="justify-center align-center">
+        <v-col class="mx-6" :cols="1">
+          <a
+            href="https://twitter.com/is_ryo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="icon"
+              src="../assets/svg/twitter-original.svg"
+              alt="twitter"
+            />
+          </a>
+        </v-col>
+        <v-col class="mx-6" :cols="1">
+          <a
+            href="https://github.com/ryo-is"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="icon"
+              src="../assets/svg/github-original.svg"
+              alt="github"
+            /> </a
+        ></v-col>
+        <v-col class="mx-6" :cols="1">
+          <a
+            href="mailto:ryosuke.izumi62@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="icon"
+              src="../assets/svg/gmail-icon-2.svg"
+              alt="gmail"
+            /> </a
+        ></v-col>
+      </v-row>
+    </v-col>
+  </div>
 </template>
 
 <script lang="ts">

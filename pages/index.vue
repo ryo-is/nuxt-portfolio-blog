@@ -1,5 +1,5 @@
-<template lang="pug">
-  .index
+<template>
+  <div class="inde"></div>
 </template>
 
 <script lang="ts">

@@ -1,32 +1,99 @@
-<template lang="pug">
-  v-app
-    v-card(height="54px" flat tile)
-      v-app-bar.px-6(
-        color="#121212" height="54px"
-        prominent dense absolute elevate-on-scroll scroll-target=".main-content"
-      )
-        v-toolbar-items.hidden-sm-and-down
-          nuxt-link.headder-link.mx-2(v-for="item in toolbarItems", :key="item.text", :to="item.link")
-            .d-flex.align-center.link-content.headline.px-3(:class="{'underline': $route.path === item.link}")
-              v-icon(left) {{ 'mdi-' + item.icon }}
-              .text {{ item.text }}
-        v-spacer
-        v-toolbar-items.hidden-sm-and-down
-          a.header-icon.mr-5(href="https://twitter.com/is_ryo" target="_blank" rel="noopener noreferrer")
-            v-icon mdi-twitter
-          a.header-icon.mr-5(href="https://github.com/ryo-is" target="_blank" rel="noopener noreferrer")
-            v-icon mdi-github
-          a.header-icon(href="mailto:ryosuke.izumi62@gmail.com" target="_blank" rel="noopener noreferrer")
-            v-icon mdi-email
-    v-content.main-content.overflow-y-auto
-      .content-wrapper
-        transition(appear name="page-transition")
-          nuxt
-      .blackout-curtain.wrapper
-        transition-group(appear name="blackout-curtain" @after-enter="blackoutCurtainAfterEnter")
-          .curtain-bar(v-for="n of 10" :key="n" :data-index="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + '%'}")
-        transition-group(appear name="blackout-curtain-after" @after-enter="blackoutCurtainAfterEnter")
-          .curtain-bar(v-for="n of 10" :key="n" v-if="blackoutCurtain" :style="{top: (n - 1) * 10 + 5 + '%'}")
+<template>
+  <v-app>
+    <v-card height="54px" flat tile>
+      <v-app-bar
+        class="px-6"
+        color="#121212"
+        height="54px"
+        prominent
+        dense
+        absolute
+        elevate-on-scroll
+        scroll-target=".main-content"
+      >
+        <v-toolbar-items class="hidden-sm-and-down">
+          <nuxt-link
+            v-for="item in toolbarItems"
+            :key="item.text"
+            :to="item.link"
+            class="header-link mx-2"
+          >
+            <div
+              class="d-flex align-center link-content headline px-3"
+              :class="{ underline: $route.path === item.link }"
+            >
+              <v-icon left>{{ 'mdi-' + item.icon }}</v-icon>
+              <div class="text">{{ item.text }}</div>
+            </div>
+          </nuxt-link>
+        </v-toolbar-items>
+        <v-spacer />
+        <v-toolbar-items class="hidden-sm-and-down">
+          <a
+            class="header-icon mr-5"
+            href="https://twitter.com/is_ryo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-icon>mdi-twitter</v-icon>
+          </a>
+          <a
+            class="header-icon mr-5"
+            href="https://github.com/ryo-is"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-icon>mdi-github</v-icon>
+          </a>
+          <a
+            class="header-icon mr-5"
+            href="mailto:ryosuke.izumi62@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <v-icon>mdi-email</v-icon>
+          </a>
+        </v-toolbar-items>
+      </v-app-bar>
+    </v-card>
+    <v-content class="main-content overflow-y-auto">
+      <div class="content-wrapper">
+        <transition appear name="page-transition">
+          <nuxt />
+        </transition>
+      </div>
+      <div class="blackout-curtain wrapper">
+        <transition-group
+          appear
+          name="blackout-curtain"
+          @after-enter="blackoutCurtainAfterEnter"
+        >
+          <div
+            v-for="n of 10"
+            v-show="blackoutCurtain"
+            :key="n"
+            class="curtain-bar"
+            :style="{ top: (n - 1) * 10 + '%' }"
+            :data-index="n"
+          />
+        </transition-group>
+        <transition-group
+          appear
+          name="blackout-curtain-after"
+          @after-enter="blackoutCurtainAfterEnter"
+        >
+          <div
+            v-for="n of 10"
+            v-show="blackoutCurtain"
+            :key="n"
+            class="curtain-bar"
+            :style="{ top: (n - 1) * 10 + 5 + '%' }"
+            :data-index="n"
+          />
+        </transition-group>
+      </div>
+    </v-content>
+  </v-app>
 </template>
 
 <script lang="ts">
@@ -65,6 +132,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
 body {
   margin: 0;
 
@@ -79,9 +148,8 @@ body {
 }
 
 #app {
-  font-family: 'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ',
-    Meiryo, 'MS Pゴシック', sans-serif;
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Righteous', 'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3',
+    'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -91,7 +159,7 @@ body {
     text-decoration: none;
   }
 
-  .headder-link {
+  .header-link {
     color: #ffffff;
     text-decoration: none;
 

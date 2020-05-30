@@ -15,13 +15,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended'
   ],
-  plugins: [
-    'prettier'
-  ],
+  plugins: ['prettier'],
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
     'no-unused-expressions': 'off',
-    'camelcase': 'off'
+    camelcase: 'off'
   }
 }
