@@ -1,7 +1,10 @@
-<template lang="pug">
-  .blog
-    .d-flex.justify-center.align-center(style="height: calc(100vh - 54px);")
-      .title-text.display-2 Blog Page
+<template>
+  <div
+    class="blog d-flex justify-center align-center"
+    style="height: calc(100vh - 54px);"
+  >
+    <div class="title-text display-2">Blog Page</div>
+  </div>
 </template>
 
 <script lang="ts">
