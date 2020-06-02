@@ -6,36 +6,7 @@
         <transition appear name="page-transition">
           <nuxt />
         </transition>
-      </div>
-      <div class="blackout-curtain wrapper">
-        <transition-group
-          appear
-          name="blackout-curtain"
-          @after-enter="blackoutCurtainAfterEnter"
-        >
-          <div
-            v-for="n of 10"
-            v-show="blackoutCurtain"
-            :key="n"
-            class="curtain-bar"
-            :style="{ top: (n - 1) * 10 + '%' }"
-            :data-index="n"
-          />
-        </transition-group>
-        <transition-group
-          appear
-          name="blackout-curtain-after"
-          @after-enter="blackoutCurtainAfterEnter"
-        >
-          <div
-            v-for="n of 10"
-            v-show="blackoutCurtain"
-            :key="n"
-            class="curtain-bar"
-            :style="{ top: (n - 1) * 10 + 5 + '%' }"
-            :data-index="n"
-          />
-        </transition-group>
+        <blackout-cartain></blackout-cartain>
       </div>
     </v-content>
   </v-app>
@@ -43,30 +14,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
 import AppBar from '@/components/AppBar.vue'
-
-const states = {
-  // blackoutCurtain: false,
-  ripple: false,
-  x: 0,
-  y: 0
-}
+import BlackoutCartain from '@/components/BlockoutCurain.vue'
 
 export default Vue.extend({
-  components: { AppBar },
-  data() {
-    return states
-  },
-  computed: {
-    ...mapState(['blackoutCurtain'])
-  },
-  methods: {
-    ...mapActions(['setBlackoutCurtain']),
-    blackoutCurtainAfterEnter() {
-      this.setBlackoutCurtain(false)
-    }
-  }
+  components: { AppBar, BlackoutCartain }
 })
 </script>
 
@@ -131,53 +83,8 @@ body {
       }
     }
 
-    @mixin blackoutCurtain($enterDelay: 0s) {
-      @include pageTransition(0s);
-
-      &-leave-active {
-        transform: translate(0px, 0px);
-        transition: transform 0.5s ease-in-out 0s;
-      }
-
-      &-leave-to {
-        opacity: 1;
-        transform: translateX(0) translateX(100vw);
-      }
-    }
-
     .page-transition {
       @include pageTransition(0s);
-    }
-
-    .blackout-curtain {
-      @include blackoutCurtain(0s);
-    }
-
-    .blackout-curtain-after {
-      @include blackoutCurtain(0s);
-
-      &-leave-to {
-        transform: translateX(-100vw) translateX(0vw);
-      }
-    }
-
-    .wrapper {
-      height: 100%;
-      left: 0;
-      pointer-events: none;
-      top: 0;
-      width: 100%;
-    }
-
-    .blackout-curtain {
-      position: absolute;
-
-      .curtain-bar {
-        background-color: #080808;
-        height: 5%;
-        position: absolute;
-        width: 100%;
-      }
     }
   }
 }
