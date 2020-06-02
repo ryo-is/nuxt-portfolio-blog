@@ -1,61 +1,6 @@
 <template>
   <v-app>
-    <v-card height="54px" flat tile>
-      <v-app-bar
-        class="px-6"
-        color="#121212"
-        height="54px"
-        prominent
-        dense
-        absolute
-        elevate-on-scroll
-        scroll-target=".main-content"
-      >
-        <v-toolbar-items class="hidden-sm-and-down">
-          <nuxt-link
-            v-for="item in toolbarItems"
-            :key="item.text"
-            :to="item.link"
-            class="header-link mx-2"
-          >
-            <div
-              class="d-flex align-center link-content headline px-3"
-              :class="{ underline: $route.path === item.link }"
-            >
-              <v-icon left>{{ 'mdi-' + item.icon }}</v-icon>
-              <div class="text">{{ item.text }}</div>
-            </div>
-          </nuxt-link>
-        </v-toolbar-items>
-        <v-spacer />
-        <v-toolbar-items class="hidden-sm-and-down">
-          <a
-            class="header-icon mr-5"
-            href="https://twitter.com/is_ryo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <v-icon>mdi-twitter</v-icon>
-          </a>
-          <a
-            class="header-icon mr-5"
-            href="https://github.com/ryo-is"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <v-icon>mdi-github</v-icon>
-          </a>
-          <a
-            class="header-icon mr-5"
-            href="mailto:ryosuke.izumi62@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <v-icon>mdi-email</v-icon>
-          </a>
-        </v-toolbar-items>
-      </v-app-bar>
-    </v-card>
+    <app-bar></app-bar>
     <v-content class="main-content overflow-y-auto">
       <div class="content-wrapper">
         <transition appear name="page-transition">
@@ -99,16 +44,9 @@
 <script lang="ts">
 import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
-
-const toolbarItems = [
-  { text: 'home', link: '/home', icon: 'home-variant' },
-  { text: 'about', link: '/about', icon: 'information' },
-  { text: 'skill', link: '/skill', icon: 'xml' },
-  { text: 'acounts', link: '/account', icon: 'account-circle' }
-]
+import AppBar from '@/components/AppBar.vue'
 
 const states = {
-  toolbarItems,
   // blackoutCurtain: false,
   ripple: false,
   x: 0,
@@ -116,6 +54,7 @@ const states = {
 }
 
 export default Vue.extend({
+  components: { AppBar },
   data() {
     return states
   },
@@ -173,7 +112,7 @@ body {
   }
 
   .main-content {
-    height: calc(100vh - 54px);
+    height: 100vh;
     position: relative;
 
     &::-webkit-scrollbar {

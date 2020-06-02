@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="about-page d-flex flex-column justify-center align-center"
-    style="height: calc(100vh - 54px);"
-  >
+  <div class="about-page d-flex flex-column justify-center align-center">
     <img class="photo" src="../assets/my_photo.png" alt="my_photo" />
     <div class="name display-2 text-center font-weight-bold mt-10">
       Ryosuke Izumi
@@ -23,6 +20,8 @@ export default Vue.extend({})
 
 <style lang="scss" scoped>
 .about-page {
+  height: 100vh;
+
   .photo {
     border-radius: 50%;
     max-width: 480px;

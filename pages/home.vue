@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="home d-flex justify-center align-center flex-column"
-    style="height: calc(100vh - 54px);"
-  >
+  <div class="home d-flex justify-center align-center flex-column">
     <vue-typer
       class="title-text dispaly-2"
       text="Wellcome to is_ryo's Portfolio!!!"
@@ -57,6 +54,8 @@ export default Vue.extend({
 
 <style lang="scss">
 .home {
+  height: 100vh;
+
   .title-text {
     font-size: 2.5rem;
 

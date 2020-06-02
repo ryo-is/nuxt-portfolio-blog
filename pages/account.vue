@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="account d-flex justify-center align-center"
-    style="height: calc(100vh - 54px);"
-  >
+  <div class="account d-flex justify-center align-center">
     <v-col :cols="12">
       <div class="display-2 font-weight-bold mb-12">Accounts</div>
       <v-row class="justify-center align-center">
@@ -31,18 +28,6 @@
               alt="github"
             /> </a
         ></v-col>
-        <v-col class="mx-6" :cols="1">
-          <a
-            href="mailto:ryosuke.izumi62@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              class="icon"
-              src="../assets/svg/gmail-icon-2.svg"
-              alt="gmail"
-            /> </a
-        ></v-col>
       </v-row>
     </v-col>
   </div>
@@ -56,6 +41,8 @@ export default Vue.extend({})
 
 <style lang="scss" scoped>
 .account {
+  height: 100vh;
+
   .icon {
     width: 100%;
   }
