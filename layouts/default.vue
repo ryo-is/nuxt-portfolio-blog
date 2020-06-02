@@ -22,7 +22,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
 
 body {
@@ -44,24 +44,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-
-  .header-icon {
-    padding-top: 9px;
-    text-decoration: none;
-  }
-
-  .header-link {
-    color: #ffffff;
-    text-decoration: none;
-
-    .link-content {
-      height: 100%;
-
-      &.underline {
-        border-bottom: 2px solid;
-      }
-    }
-  }
 
   .main-content {
     height: 100vh;

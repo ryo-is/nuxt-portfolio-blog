@@ -64,3 +64,23 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.header-icon {
+  padding-top: 9px;
+  text-decoration: none;
+}
+
+.header-link {
+  color: #ffffff;
+  text-decoration: none;
+
+  .link-content {
+    height: 100%;
+
+    &.underline {
+      border-bottom: 2px solid;
+    }
+  }
+}
+</style>
