@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="blog d-flex justify-center align-center"
-    style="height: calc(100vh - 54px);"
-  >
+  <div class="blog d-flex justify-center align-center">
     <div class="title-text display-2">Blog Page</div>
   </div>
 </template>
@@ -15,6 +12,8 @@ export default Vue.extend({})
 
 <style lang="scss">
 .blog {
+  height: 100vh;
+
   .title-text {
     font-size: 2.5rem;
   }

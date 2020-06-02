@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="skill d-flex justify-center align-center"
-    style="height: calc(100vh - 54px);"
-  >
+  <div class="skill d-flex justify-center align-center">
     <v-col :cols="12" :md="10" :lg="8">
       <div class="skill-set display-2 font-weight-bold mb-12">My SkillSet</div>
       <v-row class="justify-center align-center">
@@ -60,6 +57,8 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .skill {
+  height: 100vh;
+
   .title-text {
     font-size: 2.5rem;
   }
