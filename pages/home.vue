@@ -1,30 +1,24 @@
 <template>
   <div class="home d-flex justify-center align-center flex-column">
-    <vue-typer
-      class="title-text dispaly-2"
-      text="Wellcome to is_ryo's Portfolio!!!"
-      :repeat="0"
-    ></vue-typer>
-    <transition name="upper-content">
-      <div v-if="menu" class="menu mt-12">
-        <div class="display-1">menu</div>
-        <home-menu-link
-          to-link="about"
-          icon="mdi-information"
-          text="About is_ryo"
-        />
-        <home-menu-link
-          to-link="skill"
-          icon="mdi-xml"
-          text="is_ryo's SkillSets"
-        />
-        <home-menu-link
-          to-link="account"
-          icon="mdi-account-circle"
-          text="is_ryo's Accounts"
-        />
-      </div>
-    </transition>
+    <div class="display-2">Wellcome to is_ryo's Portfolio!!!</div>
+    <div class="menu mt-12">
+      <div class="display-1">menu</div>
+      <home-menu-link
+        to-link="about"
+        icon="mdi-information"
+        text="About is_ryo"
+      />
+      <home-menu-link
+        to-link="skill"
+        icon="mdi-xml"
+        text="is_ryo's SkillSets"
+      />
+      <home-menu-link
+        to-link="account"
+        icon="mdi-account-circle"
+        text="is_ryo's Accounts"
+      />
+    </div>
   </div>
 </template>
 
@@ -34,16 +28,6 @@ import HomeMenuLink from '@/components/HomeMenuLink.vue'
 
 export default Vue.extend({
   components: { HomeMenuLink },
-  data() {
-    return {
-      menu: false
-    }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.menu = true
-    }, 2600)
-  },
   methods: {
     linkPage() {
       console.log('link')

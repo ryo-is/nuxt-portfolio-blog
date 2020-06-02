@@ -6,9 +6,9 @@
         <transition appear name="page-transition">
           <nuxt />
         </transition>
-        <blackout-cartain></blackout-cartain>
       </div>
     </v-content>
+    <blackout-cartain></blackout-cartain>
   </v-app>
 </template>
 

@@ -97,6 +97,7 @@ export default Vue.extend({
 
 .blackout-curtain {
   position: absolute;
+  z-index: 1;
 
   .curtain-bar {
     background-color: #080808;

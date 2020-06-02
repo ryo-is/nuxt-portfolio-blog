@@ -1,5 +1,6 @@
 <template>
   <v-app-bar
+    v-show="$route.path !== '/'"
     class="px-6"
     color="#121212"
     height="54px"
