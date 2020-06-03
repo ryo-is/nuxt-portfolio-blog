@@ -9,6 +9,7 @@
       </div>
     </v-content>
     <blackout-cartain></blackout-cartain>
+    <blackout-circle></blackout-circle>
   </v-app>
 </template>
 
@@ -16,9 +17,10 @@
 import Vue from 'vue'
 import AppBar from '@/components/AppBar.vue'
 import BlackoutCartain from '@/components/BlockoutCurain.vue'
+import BlackoutCircle from '@/components/BlackoutCircle.vue'
 
 export default Vue.extend({
-  components: { AppBar, BlackoutCartain }
+  components: { AppBar, BlackoutCartain, BlackoutCircle }
 })
 </script>
 

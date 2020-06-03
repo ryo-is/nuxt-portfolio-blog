@@ -2,7 +2,10 @@ import { Context } from '@nuxt/types'
 
 export default ({ app }: Context) => {
   app.router?.beforeEach((to, _from, next) => {
-    if (to.name !== 'index') app.store?.dispatch('setBlackoutCurtain', true)
+    if (to.name !== 'index') {
+      app.store?.dispatch('setBlackoutCurtain', true)
+      // app.store?.dispatch('setBlackoutCircle', true)
+    }
     next()
   })
 }
