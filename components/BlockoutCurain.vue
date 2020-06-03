@@ -70,7 +70,7 @@ export default Vue.extend({
   }
 
   &-leave-to {
-    opacity: 1;
+    opacity: 0.95;
     transform: translateX(0) translateX(100vw);
   }
 }
@@ -88,11 +88,11 @@ export default Vue.extend({
 }
 
 .wrapper {
-  height: 100%;
+  height: 100vh;
   left: 0;
   pointer-events: none;
   top: 0;
-  width: 100%;
+  width: 100vw;
 }
 
 .blackout-curtain {
@@ -100,7 +100,7 @@ export default Vue.extend({
   z-index: 1;
 
   .curtain-bar {
-    background-color: #080808;
+    background-color: #0e0d0d;
     height: 5%;
     position: absolute;
     width: 100%;
