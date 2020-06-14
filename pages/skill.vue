@@ -1,7 +1,7 @@
 <template>
   <div class="skill d-flex justify-center align-center">
     <v-col :cols="12" :md="10" :lg="8">
-      <div class="skill-set display-2 font-weight-bold mb-12">My SkillSet</div>
+      <div class="skill-set text-h3 font-weight-bold mb-12">My SkillSet</div>
       <v-row class="justify-center align-center">
         <v-col v-for="item in skills.firstRow" :key="item.alt" :cols="1">
           <img class="skill-icon" :src="item.svg" :alt="item.alt" />

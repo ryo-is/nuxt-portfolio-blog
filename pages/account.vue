@@ -1,7 +1,7 @@
 <template>
   <div class="account d-flex justify-center align-center">
     <v-col :cols="12">
-      <div class="display-2 font-weight-bold mb-12">Accounts</div>
+      <div class="text-h3 font-weight-bold mb-12">Accounts</div>
       <v-row class="justify-center align-center">
         <v-col class="mx-6" :cols="1">
           <a

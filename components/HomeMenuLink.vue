@@ -5,11 +5,11 @@
       @mouseover="hiddenArrow = false"
       @mouseleave="hiddenArrow = true"
     >
-      <v-icon class="cursor display-1" :class="{ hidden: hiddenArrow }"
+      <v-icon class="cursor text-h4" :class="{ hidden: hiddenArrow }"
         >mdi-chevron-right</v-icon
       >
-      <v-icon class="display-1 pr-3">{{ icon }}</v-icon>
-      <div class="display-1">{{ text }}</div>
+      <v-icon class="text-h4 pr-3">{{ icon }}</v-icon>
+      <div class="text-h4">{{ text }}</div>
     </div>
   </nuxt-link>
 </template>

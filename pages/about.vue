@@ -1,14 +1,14 @@
 <template>
   <div class="about-page d-flex flex-column justify-center align-center">
     <img class="photo" src="../assets/my_photo.png" alt="my_photo" />
-    <div class="name display-2 text-center font-weight-bold mt-10">
+    <div class="name text-h3 text-center font-weight-bold mt-10">
       Ryosuke Izumi
     </div>
-    <div class="job display-1 text-center mt-6">Frontend / WebApplication</div>
-    <div class="likes display-1 text-center mt-6">
+    <div class="job text-h4 text-center mt-6">Frontend / WebApplication</div>
+    <div class="likes text-h4 text-center mt-6">
       Vue (Nuxt) / TypeScript / AWS
     </div>
-    <div class="community display-1 text-center mt-6">v-kansai / kansai.ts</div>
+    <div class="community text-h4 text-center mt-6">v-kansai / kansai.ts</div>
   </div>
 </template>
 

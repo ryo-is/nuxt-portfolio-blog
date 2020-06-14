@@ -1,7 +1,7 @@
 <template>
   <div class="index d-flex justify-center align-center flex-column">
     <vue-typer
-      class="title-text dispaly-2"
+      class="title-text text-h3"
       text="Wellcome to is_ryo's Portfolio!!!"
       :repeat="0"
     ></vue-typer>
