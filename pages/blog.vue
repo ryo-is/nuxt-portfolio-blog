@@ -1,6 +1,6 @@
 <template>
   <div class="blog d-flex justify-center align-center">
-    <div class="title-text display-2">Blog Page</div>
+    <div class="title-text text-h3">Blog Page</div>
   </div>
 </template>
 

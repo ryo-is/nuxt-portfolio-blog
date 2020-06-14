@@ -18,7 +18,7 @@
         class="header-link mx-2"
       >
         <div
-          class="d-flex align-center link-content headline px-3"
+          class="d-flex align-center link-content text-h5 px-3"
           :class="{ underline: $route.path === item.link }"
         >
           <v-icon left>{{ 'mdi-' + item.icon }}</v-icon>

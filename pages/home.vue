@@ -1,8 +1,8 @@
 <template>
   <div class="home d-flex justify-center align-center flex-column">
-    <div class="display-2">Wellcome to is_ryo's Portfolio!!!</div>
+    <div class="text-h3">Wellcome to is_ryo's Portfolio!!!</div>
     <div class="menu mt-12">
-      <div class="display-1">menu</div>
+      <div class="text-h4">menu</div>
       <home-menu-link
         to-link="about"
         icon="mdi-information"
